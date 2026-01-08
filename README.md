@@ -1,5 +1,5 @@
 # Sananmuunnoksia Kettulan vintiltä
-Tämä on tasavallan virallinen [sananmuunnoskaanon](https://sto.iki.fi/sananmuunnoksia/), jonka suojelijana toimii Kuhanleikkaaja-Lilli. Vaihtoehtoisen käyttöliittymän korpukseen tarjoaa [satunnainen poiminta](https://sto.iki.fi/sananmuunnoksia/satunnainen/).
+Tämä on tasavallan virallinen [sananmuunnoskaanon](https://sananmuunnokset.fi/), jonka suojelijana toimii Kuhanleikkaaja-Lilli. Vaihtoehtoisen käyttöliittymän korpukseen tarjoaa [satunnainen poiminta](https://sananmuunnokset.fi/satunnainen/).
 
 ## Kaanon.js
 
