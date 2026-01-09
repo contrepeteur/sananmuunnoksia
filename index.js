@@ -1,4 +1,4 @@
-import kaanon from "./kaanon.json";
+import kaanon from "./kaanon.json" with { type: "json" };
 
 const filterKaanon = (categories = []) => {
     return Object.entries(kaanon)
@@ -23,15 +23,15 @@ function* kaanonIterator(categories = []) {
  *        The mapper must handle undefined input (when iterator is exhausted) and never return undefined.
  * @returns {KaanonIterator<T>} An iterator object with next(), take(), and isDone() methods
  * @template T
- * 
+ *
  * @example
  * // Get all items
  * const iterator = getIterator();
- * 
+ *
  * @example
  * // Get items from specific category
  * const iterator = getIterator(['category1']);
- * 
+ *
  * @example
  * // Transform items with a mapper
  * const iterator = getIterator([], x => x ? x.toUpperCase() : 'default');
@@ -79,7 +79,7 @@ export const getEmailAddresses = (server = 'example.com') => {
             .replace(/å/g, 'a');
         return `${normalized}@${server}`;
     };
-    
+
     return getIterator(['nimi'], emailMapper);
 };
 
@@ -96,6 +96,6 @@ export const getNames = () => {
             .map(part => part.charAt(0).toUpperCase() + part.slice(1).toLowerCase())
             .join(' ');
     };
-    
+
     return getIterator(['nimi'], nameMapper);
 };
