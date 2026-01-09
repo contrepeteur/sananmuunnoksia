@@ -3,8 +3,11 @@
     "description": "Utilities for the Kaanon",
     "homepage": "https://github.com/contrepeteur/sananmuunnoksia",
     "repository": "https://github.com/contrepeteur/sananmuunnoksia",
-    "contributors": ["tjjalava@iki.fi", "sampsa.toivanen@iki.fi"],
-    "version": "1.0.0",
+    "contributors": [
+        "tjjalava@iki.fi",
+        "sampsa.toivanen@iki.fi"
+    ],
+    "version": "1.0.1",
     "module": "index.js",
     "type": "module",
     "types": "index.d.ts",
