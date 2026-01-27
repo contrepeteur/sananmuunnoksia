@@ -25,7 +25,7 @@ describe('Kaanon Iterator', () => {
     it('should iterate through all items when no categories are specified', () => {
       const iterator = getIterator();
       const results = new Set();
-      
+
       let value;
       while ((value = iterator.next()) !== "") {
         results.add(value);
@@ -41,7 +41,7 @@ describe('Kaanon Iterator', () => {
     it('should only return items from specified category', () => {
       const iterator = getIterator(['category1']);
       const results = new Set();
-      
+
       let value;
       while ((value = iterator.next()) !== "") {
         results.add(value);
@@ -56,7 +56,7 @@ describe('Kaanon Iterator', () => {
       const iterator = getIterator();
       // Exhaust the iterator
       while (iterator.next() !== "") {}
-      
+
       expect(iterator.next()).toBe("");
     });
 
@@ -75,20 +75,20 @@ describe('Kaanon Iterator', () => {
     it('should report done status correctly via isDone', () => {
       const iterator = getIterator();
       expect(iterator.isDone()).toBe(false);
-      
+
       // Exhaust the iterator
       while (iterator.next() !== "") {}
-      
+
       expect(iterator.isDone()).toBe(true);
     });
 
     it('should call mapper with undefined when exhausted', () => {
       const mockMapper = vi.fn(x => x === undefined ? "default" : x);
       const iterator = getIterator([], mockMapper);
-      
+
       // Exhaust the iterator
       while (iterator.next() !== "default") {}
-      
+
       // Verify the mapper was called with undefined
       expect(mockMapper).toHaveBeenCalledWith(undefined);
       expect(iterator.next()).toBe("default");
@@ -131,7 +131,7 @@ describe('getEmailAddresses', () => {
   it('should return anonymous email when iterator is exhausted', () => {
     const iterator = getEmailAddresses('example.com');
     // Exhaust the iterator first
-    const allEmails = iterator.take(Infinity);
+    iterator.take(Infinity);
     expect(iterator.isDone()).toBe(true);
     expect(iterator.next()).toBe('anonymous@example.com');
   });
@@ -163,8 +163,8 @@ describe('getNames', () => {
     it('should return anonymous name when iterator is exhausted', () => {
         const iterator = getNames();
         // Exhaust the iterator first
-        const allNames = iterator.take(Infinity);
+        iterator.take(Infinity);
         expect(iterator.isDone()).toBe(true);
         expect(iterator.next()).toBe('Anonymous User');
     });
-}); 
+});
